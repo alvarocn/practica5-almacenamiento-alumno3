@@ -510,9 +510,10 @@ Con el siguiente comando redimensionamos los ficheros creados anteriormente y po
 	end notable;
 	/
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/12.png)
-![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/13.png)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/15.png)
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/14.png)
-7. Averigua si es posible establecer cuotas de uso sobre los tablespaces en Postgres.
+
+**7. Averigua si es posible establecer cuotas de uso sobre los tablespaces en Postgres.**
 
 
 PostgreSQL no tiene la opción de administrar cuotas como presentan tener los Sistemas Gestores de Bases de Datos como por ejemplo Oracle Database.Lo que se puede hacer es asignar una cuota maxima de tamaño al usuario en la particion donde se aloja el tablespace, como  veremos a continuación.
