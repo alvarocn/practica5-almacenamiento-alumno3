@@ -554,13 +554,13 @@ Si queremos cambiar la cuota de un usuario:
 
 InnoDB es un motor de almacenamiento que usa el gestor de base de datos, en el podemos encontrar extensiones, segmentos y páginas. 
 
-File system              <-> InnoDB
-----------------------------------------------
-disk partition           <-> tablespace
-file                     <-> segment ---------> UN FICHERO ES UN SEGMENTO.
-inode                    <-> fsp0fsp.c 'inode'
-fs space allocation unit <-> extent---------> UN ESPACIO ES UNA EXTENSIÓN.
-disk block               <-> page (16 kB)-----------> UN BLOQUE ES UNA PÁGINA.
+	File system              <-> InnoDB
+	----------------------------------------------
+	disk partition           <-> tablespace
+	file                     <-> segment ---------> UN FICHERO ES UN SEGMENTO.
+	inode                    <-> fsp0fsp.c 'inode'
+	fs space allocation unit <-> extent---------> UN ESPACIO ES UNA EXTENSIÓN.
+	disk block               <-> page (16 kB)-----------> UN BLOQUE ES UNA PÁGINA.
 
 En Oracle:
 
