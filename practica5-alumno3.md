@@ -13,7 +13,7 @@ El tablespace TS2, del alumno 2 es el que vemos a continuación:
 	size 1M
 	autoextend off;
 
-![1](imagenes/1.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/1.png)
 
 
 Insertamos registro:
@@ -68,9 +68,10 @@ Realizamos una consulta para ver la información como espacio que ocupa, comprob
 
 	SQL> 
 
-![2](imagenes/2.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/2.png)
 
-![2](imagenes/3.jpg)
+
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/3.png)
 
 
 **2. Borra la tabla que está llenando TS2 consiguiendo quevuelvan a existir extensiones libres. Añade después otro fichero de datos a TS2.**
@@ -96,7 +97,7 @@ Realizamos una consulta para ver la información como espacio que ocupa, comprob
 	
 	Tabla borrada.
 
-![4](imagenes/4.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/4.png)
 
 Comprobación de que se ha borrado.
 
@@ -114,7 +115,7 @@ Comprobación de que se ha borrado.
 
 	SQL> 
 
-![5](imagenes/5.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/5.png)
 
 Añadimos de nuevo otro fichero a TS2:
 
@@ -170,7 +171,7 @@ Comprobamos que se ha creado:
 	
 	SQL> 
 
-![6](imagenes/6.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/6.png)
 
 
 Para poder mover un fichero, el cual está en uso tenemos que ponerlo en "offline":
@@ -201,7 +202,7 @@ Y activamos de nuevo el tablespace.
 	
 	SQL> 
 
-![7](imagenes/7.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/7.png)
 
 	Creamos las tablas e insertamos registros:
 	
@@ -339,9 +340,9 @@ Comprobamos los segmentos, extensiones y la ubicación que se encuentra:
 
 	SQL> 
 
-![8](imagenes/8.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/8.png)
 
-![9](imagenes/9.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/9.png)
 
 
 **4. Redimensiona los ficheros asociados a los tres tablespaces que has creado de forma que ocupen el mínimo espacio posible para alojar sus objetos.**
@@ -391,7 +392,7 @@ Comprobamos los segmentos, extensiones y la ubicación que se encuentra:
 	SQL> 
 
 
-![10](imagenes/10.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/10.png)
 
 Con el siguiente comando redimensionamos los ficheros creados anteriormente y posteriormente comprobaremos que el espacio que ocupa es menor.
 
@@ -436,7 +437,7 @@ Con el siguiente comando redimensionamos los ficheros creados anteriormente y po
 	SQL> 
 
 
-![11](imagenes/11.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/11.png)
 
 **5. Realiza un procedimiento llamado InformeRestricciones que reciba el nombre de una tabla y muestre los nombres de las restricciones que tiene, a qué columna o columnas afectan y en qué consisten exactamente.**
 
@@ -508,9 +509,9 @@ Con el siguiente comando redimensionamos los ficheros creados anteriormente y po
 
 	end notable;
 	/
-![12](imagenes/12.jpg)
-![14](imagenes/14.jpg)
-![15](imagenes/15.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/12.png)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/13.png)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/14.png)
 7. Averigua si es posible establecer cuotas de uso sobre los tablespaces en Postgres.
 
 
@@ -544,7 +545,7 @@ Si queremos cambiar la cuota de un usuario:
 
 	"edquota "usuarios""
 
-![13](imagenes/13.jpg)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/13.png)
 
 **MySQL:**
 
