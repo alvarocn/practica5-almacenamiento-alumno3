@@ -513,6 +513,7 @@ Con el siguiente comando redimensionamos los ficheros creados anteriormente y po
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/15.png)
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/14.png)
 
+ ## PostgreSQL
 **7. Averigua si es posible establecer cuotas de uso sobre los tablespaces en Postgres.**
 
 
