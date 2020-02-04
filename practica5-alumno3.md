@@ -16,17 +16,7 @@ El tablespace TS2, del alumno 2 es el que vemos a continuación:
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/1.png)
 
 
-	spool drop.sql
-	select 'DROP TABLE '||owner||'.'||segment_name||';'
-	from dba_segments
-	where segment_type='TABLE' and segment_name in (select table_name
-							from dba_all_tables
-							where tablespace_name = 'TS2')
-							and bytes = (select max(bytes)
-								     from dba_segments
-								     where tablespace_name = 'TS2');
-	spool off
-	@drop
+
 	
 
 Realizamos una consulta para ver la información como espacio que ocupa, comprobar la ubicación, nombre y tipo del segmento :
@@ -76,25 +66,17 @@ Realizamos una consulta para ver la información como espacio que ocupa, comprob
 **2. Borra la tabla que está llenando TS2 consiguiendo quevuelvan a existir extensiones libres. Añade después otro fichero de datos a TS2.**
 
 
-	SQL> spool drop.sql
+	spool drop.sql
 	select 'DROP TABLE '||owner||'.'||segment_name||';'
 	from dba_segments
-	where segment_type='TABLE' and segment_name in (
-	select table_name
-	from dba_all_tables
-	where tablespace_name = 'TS2')
-	and bytes = (select max(bytes)
-	from dba_segments
-	where tablespace_name = 'TS2');SQL>   2    3    4    5    6    7    8    9  
-	
-	'DROPTABLE'||OWNER||'.'||SEGMENT_NAME||';'
-	--------------------------------------------------------------------------------
-	DROP TABLE SYS.PRUEBON;
-	
-	SQL> spool off
-	@dropSQL> 
-	
-	Tabla borrada.
+	where segment_type='TABLE' and segment_name in (select table_name
+							from dba_all_tables
+							where tablespace_name = 'TS2')
+							and bytes = (select max(bytes)
+								     from dba_segments
+								     where tablespace_name = 'TS2');
+	spool off
+	@drop
 
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/4.png)
 
