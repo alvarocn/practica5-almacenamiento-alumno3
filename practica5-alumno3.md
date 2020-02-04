@@ -1,6 +1,6 @@
 Alumno 3:
 
-ORACLE:
+##ORACLE:
 
 **1. Muestra los objetos a los que pertenecen las extensiones del tablespace TS2 (creado por Alumno 2) y el tamaño de cada una de ellas.**
 
@@ -548,7 +548,7 @@ Si queremos cambiar la cuota de un usuario:
 
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/13.png)
 
-**MySQL:**
+##MySQL:
 
 **8. Averigua si existe el concepto de extensión en MySQL y si coincide con el existente en ORACLE.**
 
@@ -568,7 +568,7 @@ Extensión es un número específico de bloques de datos contiguos en el disco.
 El segmento es un conjunto de extensiones, no necesariamente consecutivas  en un mismoconsecutivas, enunmismotablespace.
 Bloque de datos es el número específico de bytes contiguos de espacio físico en el disco. 
 
-
+##MongoDB
 **9. Averigua si en MongoDB puede saberse el espacio disponible para almacenar nuevos documentos.**
 
 Mongodb tiene una serie de funciones con las cuales podemos obtener diferentes datos sobre almacenamiento como por ejemplo el espacio disponible con la funcion db.collection.storageSize(), dicha función nos proporciona la reserva de espacio incluido el espacio no utlizado.
