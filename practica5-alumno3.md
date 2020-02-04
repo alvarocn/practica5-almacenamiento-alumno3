@@ -12,6 +12,19 @@ El tablespace TS2, del alumno 2 es el que vemos a continuación:
 	'/home/oracle/TS2-2.dbf'
 	size 1M
 	autoextend off;
+	
+	Create table Pruebon
+	(
+	Prueba char(2000),
+	Prueba2 char(2000),
+	Prueba3 char(2000)
+	)
+	Storage
+	(
+		Initial 10K
+	)
+	tablespace TS2;
+
 
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/1.png)
 
@@ -37,6 +50,7 @@ Realizamos una consulta para ver la información como espacio que ocupa, comprob
 
 
 	SQL> 
+	
 
 
 
@@ -78,22 +92,21 @@ Realizamos una consulta para ver la información como espacio que ocupa, comprob
 	spool off
 	@drop
 
-![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/4.png)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/34.png)
 
 Comprobación de que se ha borrado.
 
-	SQL> select segment_name
+	select 'DROP TABLE '||owner||'.'||segment_name||';'
 	from dba_segments
-	where segment_type='TABLE' and segment_name in (
-	select table_name
-	from dba_all_tables
-	where tablespace_name = 'TS2')
-	and bytes = (select max(bytes)
-	from dba_segments
-	where tablespace_name = 'TS2');  2    3    4    5    6    7    8    9  
+	where segment_type='TABLE' and segment_name in (select table_name
+							from dba_all_tables
+							where tablespace_name = 'TS2')
+							and bytes = (select max(bytes)
+								     from dba_segments
+								     where tablespace_name = 'TS2');
 	
 	ninguna fila seleccionada
-
+	
 	SQL> 
 
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/5.png)
