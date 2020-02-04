@@ -16,19 +16,18 @@ El tablespace TS2, del alumno 2 es el que vemos a continuación:
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/1.png)
 
 
-Insertamos registro:
-
-	Create table Pruebon
-	(
-		Prueba char(2000),
-		Prueba2 char(2000),
-		Prueba3 char(2000)
-	)
-	Storage
-	(
-		Initial 10K
-	)
-	tablespace TS2;
+	spool drop.sql
+	select 'DROP TABLE '||owner||'.'||segment_name||';'
+	from dba_segments
+	where segment_type='TABLE' and segment_name in (select table_name
+							from dba_all_tables
+							where tablespace_name = 'TS2')
+							and bytes = (select max(bytes)
+								     from dba_segments
+								     where tablespace_name = 'TS2');
+	spool off
+	@drop
+	
 
 Realizamos una consulta para ver la información como espacio que ocupa, comprobar la ubicación, nombre y tipo del segmento :
 
@@ -572,7 +571,7 @@ Bloque de datos es el número específico de bytes contiguos de espacio físico 
 ## MongoDB
 **9. Averigua si en MongoDB puede saberse el espacio disponible para almacenar nuevos documentos.**
 
-Mongodb tiene una serie de funciones con las cuales podemos obtener diferentes datos sobre almacenamiento como por ejemplo el espacio disponible con la funcion db.collection.storageSize(), dicha función nos proporciona la reserva de espacio incluido el espacio no utlizado.
+Mongodb tiene una serie de funciones con las cuales podemos obtener diferentes datos sobre almacenamiento como por ejemplo el espacio disponible con la funcion db.collection.storageSize(), dicha función nos proporciona la reserva de espacio incluido el espacio no utilizado.
 
 Otras funciones serían las siguientes:
 
