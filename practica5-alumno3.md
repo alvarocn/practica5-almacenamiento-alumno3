@@ -26,13 +26,12 @@ El tablespace TS2, del alumno 2 es el que vemos a continuación:
 	tablespace TS2;
 
 
-![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/1.png)
-
-
-
-	
 
 Realizamos una consulta para ver la información como espacio que ocupa, comprobar la ubicación, nombre y tipo del segmento :
+
+
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/1.png)
+
 
 	SQL> select file_name,tablespace_name
 	from dba_data_files
@@ -109,7 +108,7 @@ Comprobación de que se ha borrado.
 	
 	SQL> 
 
-![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/5.png)
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/45.png)
 
 Añadimos de nuevo otro fichero a TS2:
 
