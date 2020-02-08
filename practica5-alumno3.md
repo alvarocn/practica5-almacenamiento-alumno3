@@ -112,7 +112,9 @@ Realizamos una consulta para ver la información como espacio que ocupa, comprob
 	
 	Tabla borrada.
 
-	
+
+Comprobación de que se ha borrado.
+
 	
 	SQL> select OWNER, SEGMENT_NAME, SEGMENT_TYPE, TABLESPACE_NAME,BYTES
 	from dba_extents
@@ -136,22 +138,7 @@ Realizamos una consulta para ver la información como espacio que ocupa, comprob
 
 ![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/55.png)
 
-Comprobación de que se ha borrado.
 
-	select 'DROP TABLE '||owner||'.'||segment_name||';'
-	from dba_segments
-	where segment_type='TABLE' and segment_name in (select table_name
-							from dba_all_tables
-							where tablespace_name = 'TS2')
-							and bytes = (select max(bytes)
-								     from dba_segments
-								     where tablespace_name = 'TS2');
-	
-	ninguna fila seleccionada
-	
-	SQL> 
-
-![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/45.png)
 
 Añadimos de nuevo otro fichero a TS2:
 
