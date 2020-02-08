@@ -79,19 +79,62 @@ Realizamos una consulta para ver la información como espacio que ocupa, comprob
 **2. Borra la tabla que está llenando TS2 consiguiendo quevuelvan a existir extensiones libres. Añade después otro fichero de datos a TS2.**
 
 
-	spool drop.sql
+	SQL> select OWNER, SEGMENT_NAME, SEGMENT_TYPE, TABLESPACE_NAME,BYTES
+	from dba_extents
+	where tablespace_name='TS2';  2    3  
+
+	OWNER
+	--------------------------------------------------------------------------------
+	SEGMENT_NAME
+	--------------------------------------------------------------------------------
+	SEGMENT_TYPE	   TABLESPACE_NAME		       BYTES
+	------------------ ------------------------------ ----------
+	SYS
+	PRUEBON
+	TABLE		   TS2				       65536
+
+
+	SQL>
+	
+	
+	SQL> spool drop.sql
 	select 'DROP TABLE '||owner||'.'||segment_name||';'
 	from dba_segments
 	where segment_type='TABLE' and segment_name in (select table_name
-							from dba_all_tables
-							where tablespace_name = 'TS2')
-							and bytes = (select max(bytes)
-								     from dba_segments
-								     where tablespace_name = 'TS2');
+	 						from dba_all_tables
+							where tablespace_name = 'TS2');
 	spool off
-	@drop
+	@dropSQL>   2    3    4    5  
 
-![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/34.png)
+	'DROPTABLE'||OWNER||'.'||SEGMENT_NAME||';'
+	--------------------------------------------------------------------------------
+	DROP TABLE SYS.PRUEBON;
+	
+	Tabla borrada.
+
+	
+	
+	SQL> select OWNER, SEGMENT_NAME, SEGMENT_TYPE, TABLESPACE_NAME,BYTES
+	from dba_extents
+	where tablespace_name='TS2';  2    3  
+
+	ninguna fila seleccionada
+
+	SQL> spool drop.sql
+	select 'DROP TABLE '||owner||'.'||segment_name||';'
+	from dba_segments
+	where segment_type='TABLE' and segment_name in (select table_name
+	 						from dba_all_tables
+							where tablespace_name = 'TS2');SQL>   2    3    4    5  
+	
+	ninguna fila seleccionada
+
+	SQL> 
+
+	
+
+
+![](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/imagenes/55.png)
 
 Comprobación de que se ha borrado.
 
